@@ -102,19 +102,24 @@
 			</div>
 
 			<div class="mb-3 row">
-				<div class="col-sm-1">
-				</div>
+				<div class="col-sm-1"></div>
 				<div class="col-sm-1">
 					<label class="col-form-label">BMI 이미지</label>
 				</div>
 				<div class="col-sm-5 text-center shadow p-3 mb-5 bg-body rounded">
-					<img th:src="|img/${bmi.bmi_result}.png|">
-					<img th:src="'img/'+${bmi.bmi_result}+'.png'">
-					<img th:src="'img/'+${bmi.bmi_result}+'.png'">
+				<figure class="figure">
+					<img class="figure-img img-fluid rounded" th:src="|img/${bmi.bmi_result}.png|"> 
+					<img class="figure-img img-fluid rounded" th:src="'img/'+${bmi.bmi_result}+'.png'"> 
+					<img class="figure-img img-fluid rounded" th:src="'img/'+${bmi.bmi_result}+'.png'">
+					<figcaption class="figure-caption" th:text = "${bmi.bmi_result}"></figcaption>
+					</figure>
 				</div>
-					<div class="col-sm-5"></div>
+				<div class="col-sm-5"></div>
 			</div>
+			
 
+
+		</div>
 		</div>
 	</form>
 	<!-- bootstrap script -->
