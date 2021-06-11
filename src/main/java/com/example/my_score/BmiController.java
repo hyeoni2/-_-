@@ -1,5 +1,6 @@
 package com.example.my_score;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,9 +10,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BmiController {
 	
+	@Autowired//자동 주입
+	BmiRepository bmiRepository;
+
+	
 	@GetMapping("/")
 	public String input_bmi() {
 		
+		Bmi bmi = new Bmi();
+		bmi.setHeight(174);
+		bmi.setWeight(74);
+		bmi.setBmi_value(24.4);
+		bmi.setBmi_result("정상");
+		bmiRepository.save(bmi);
+	
 		return "input_bmi";
 	}
 	
